@@ -1,0 +1,1 @@
+-frontend-mentor-Single-price-grid-component

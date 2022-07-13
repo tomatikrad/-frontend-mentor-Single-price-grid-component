@@ -1,0 +1,225 @@
+:root {
+  --cls-primary-cyan: hsl(179 62% 43%);
+  --cls-primary-lcyan: hsl(179 47% 52%);
+  --cls-primary-yellow: hsl(71 73% 54%);
+
+  --cls-neutral-100: hsl(0 0% 100%);
+  --cls-neutral-200: hsl(204 43% 93%);
+  --cls-neutral-300: hsl(218 22% 67%);
+}
+
+@font-face {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("./fonts/karla-v22-latin-regular.woff2") format("woff2"),
+    url("./fonts/karla-v22-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Karla";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("./fonts/karla-v22-latin-700.woff2") format("woff2"),
+    url("./fonts/karla-v22-latin-700.woff") format("woff");
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Karla", sans-serif;
+  background-color: var(--cls-neutral-200);
+}
+main {
+  /* min-height: 100%; */
+  height: calc(100% - 40px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 20px;
+  display: grid;
+  justify-content: center;
+}
+.card {
+  width: 310px;
+  height: min-content;
+  border-radius: 0.3em;
+  overflow: hidden;
+}
+
+.card__item {
+  padding: 1.5em;
+}
+.card-one {
+  background-color: var(--cls-neutral-100);
+}
+.card-two {
+  background-color: var(--cls-primary-cyan);
+}
+.card-three {
+  background-color: var(--cls-primary-lcyan);
+}
+.card-one__title {
+  color: var(--cls-primary-cyan);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.card-one__subtitle {
+  color: var(--cls-primary-yellow);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.7px;
+  margin-bottom: 1.2rem;
+}
+.card-one__description {
+  font-size: 0.875rem;
+  color: var(--cls-neutral-300);
+  line-height: 1.75;
+  margin-bottom: 0.6rem;
+}
+.card__title {
+  color: var(--cls-neutral-100);
+  font-weight: 700;
+  font-size: 1.125rem;
+
+  margin-bottom: 0.6rem;
+}
+.card__price {
+  color: var(--cls-neutral-100);
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+}
+.card__price span {
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--cls-neutral-200);
+  margin-left: 0.7rem;
+}
+.card-two__desc {
+  color: var(--cls-neutral-100);
+  margin-bottom: 1.6rem;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  color: var(--cls-neutral-100);
+  background-color: var(--cls-primary-yellow);
+  border: none;
+  border-radius: 0.3rem;
+}
+
+.card__description {
+  color: var(--cls-neutral-200);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  width: 22ch;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 20px;
+  background-color: var(--clr-neutral-200);
+  color: var(--cls-primary-cyan);
+}
+
+@media (min-width: 1440px) {
+  main {
+    place-items: center;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 632px;
+  }
+
+  .card-one {
+    grid-column: 1 / 3;
+  }
+
+  .card__item {
+    padding: 2.4em;
+  }
+
+  .card-one__title {
+    font-size: 1.5rem;
+  }
+
+  .card-one__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  .card-one__description {
+    font-size: 0.9375rem;
+    margin-bottom: 0;
+  }
+  .card__description {
+    line-height: 1.5;
+  }
+}
